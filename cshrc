@@ -6,9 +6,4 @@ setenv VERDI_HOME /home/Synopsys/verdi/U-2023.03-SP1
 
 setenv PT_HOME /home/Synopsys/prime/T--2022.03-SP2
 
-set path = (
-    $VCS_HOME/bin
-    $VERDI_HOME/bin
-    $PT_HOME/bin
-    $path
-)
+set path = ( $VCS_HOME/bin $VERDI_HOME/bin $PT_HOME/bin $path )
