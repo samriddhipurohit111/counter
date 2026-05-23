@@ -1,0 +1,41 @@
+`timescale 1ns1ps
+
+module counter_tb;
+
+reg clk;
+reg rst;
+wire [30] count;
+
+ DUT Instantiation
+counter uut (
+    .clk(clk),
+    .rst(rst),
+    .count(count)
+);
+
+ Clock Generation
+always #5 clk = ~clk;
+
+initial begin
+     Initialize
+    clk = 0;
+    rst = 1;
+
+     Apply Reset
+    #10;
+    rst = 0;
+
+     Run simulation
+    #100;
+
+     Stop simulation
+    $finish;
+end
+
+ Monitor values
+initial begin
+    $monitor(Time = %0t  rst = %b  count = %d,
+              $time, rst, count);
+end
+
+endmodule
